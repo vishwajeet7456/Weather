@@ -1,6 +1,8 @@
 var btnTemperature = document.querySelector("#btn-temperature");
 var txtInput = document.querySelector("#txt-input");
 var outputDiv = document.querySelector("#output");
+var weatherIcon = document.querySelector("#img1");
+var weatherCondition = document.querySelector("#wtrCndn")
 
 var serverURL = "https://api.openweathermap.org/data/2.5/weather"
 
@@ -21,6 +23,10 @@ function clickHandler() {
         .then(json => {
             var currentTemperature = json.main.temp;
             outputDiv.innerText = currentTemperature + " °C";
+            var currentIcon = json.weather[0].icon;
+            weatherIcon.src = "http://openweathermap.org/img/wn/" + currentIcon + "@2x.png";
+            var currentWeatherCondition = json.weather[0].main;
+            weatherCondition.innerText = currentWeatherCondition;
         })
         .catch(errorHandler)
 };
