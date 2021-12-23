@@ -31,14 +31,22 @@
         #btn-temperature {
             text-align: center;
         }
+
+        #button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
     </style>
 </head>
 
 <body>
     <h1>Weather</h1>
     <textarea id="txt-input" placeholder="Enter City"></textarea>
-    <button id="btn-temperature">Find Temperature</button>
-    <div style="font-size: larger; text-align: center">
+    <div id="button">
+        <button id="btn-temperature">Check Weather</button>
+    </div>
+    <div style="font-size: larger; text-align: center; padding: 0.2rem">
         Current Temperature 👇
     </div>
     <div id="output"></div>
