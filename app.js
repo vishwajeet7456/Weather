@@ -28,7 +28,7 @@ function clickHandler() {
             weatherIcon.src = "http://openweathermap.org/img/wn/" + currentIcon + "@2x.png";
             var currentWeatherCondition = json.weather[0].main;
             weatherCondition.innerText = currentWeatherCondition;
-            var wind = json.wind.speed;
+            var wind = json.wind.speed * 3.6;
             var humidity = json.main.humidity;
             var pressure = json.main.pressure;
             weatherDescription.innerText = "Wind: " + wind + " Km/h | Humidity: " + humidity + " % | Pressure: " + pressure + " mb";
