@@ -22,13 +22,13 @@ function clickHandler() {
     fetch(getTemperatureURL(inputText))
         .then(response => response.json())
         .then(json => {
-            var currentTemperature = json.main.temp;
+            var currentTemperature = Math.floor(json.main.temp);
             outputDiv.innerText = currentTemperature + " °C";
             var currentIcon = json.weather[0].icon;
             weatherIcon.src = "http://openweathermap.org/img/wn/" + currentIcon + "@2x.png";
             var currentWeatherCondition = json.weather[0].main;
             weatherCondition.innerText = currentWeatherCondition;
-            var wind = json.wind.speed * 3.6;
+            var wind = Math.floor(json.wind.speed * 3.6);
             var humidity = json.main.humidity;
             var pressure = json.main.pressure;
             weatherDescription.innerText = "Wind: " + wind + " Km/h | Humidity: " + humidity + " % | Pressure: " + pressure + " mb";
